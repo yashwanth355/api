@@ -10,7 +10,7 @@ data "aws_availability_zones" "available" {
 # Create var.az_count private subnets, each in a different AZ
 resource "aws_subnet" "private" {
   count             = var.az_count
-  cidr_block        = cidrsubnet(aws_vpc.test-vpc.cidr_block, 8, count.index)
+  cidr_block        = cidrsubnet(aws_vpc.dev-vpc.cidr_block, 8, count.index)
   availability_zone = data.aws_availability_zones.available.names[count.index]
   vpc_id            = aws_vpc.dev-vpc.id
 }
