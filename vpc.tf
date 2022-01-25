@@ -46,7 +46,7 @@ resource "aws_eip" "dev-eip" {
 resource "aws_nat_gateway" "dev-natgw" {
   count         = var.az_count
   subnet_id     = element(aws_subnet.public.*.id, count.index)
-  allocation_id = element(aws_eip.test-eip.*.id, count.index)
+  allocation_id = element(aws_eip.dev-eip.*.id, count.index)
 }
 
 # Create a new route table for the private subnets, make it route non-local traffic through the NAT gateway to the internet
