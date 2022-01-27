@@ -7,10 +7,10 @@ data "aws_iam_policy_document" "ecs_task_execution_role" {
 
     principals {
       type        = "Service"
-      identifiers = ["ecs-tasks.amazonaws.com"]
-      identifiers = ["ec2-tasks.amazonaws.com"]
-      identifiers = ["s3-tasks.amazonaws.com"]
-      identifiers = ["lambda-tasks.amazonaws.com"]
+      identifiers = ["ecs-tasks.amazonaws.com"],
+      identifiers = ["ec2-tasks.amazonaws.com"],
+      identifiers = ["s3-tasks.amazonaws.com"],
+      identifiers = ["lambda-tasks.amazonaws.com"],
 
     }
   }
