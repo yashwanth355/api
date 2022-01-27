@@ -1,17 +1,19 @@
 data "aws_iam_policy_document" "ecs_task_execution_role" {
-  Version: "2012-10-17",
-  Statement: [
-    {
-      Effect: "Allow",
-      Principal: {
-        Service: "ec2.amazonaws.com",
-        Service: "ecs.amazonaws.com",
-        Service: "lambda.amazonaws.com",
-        Service: "s3.amazonaws.com"
-      },
-      Action: "sts:AssumeRole"
+  version = "2012-10-17"
+  statement {
+    sid     = ""
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["ecs-tasks.amazonaws.com"]
+      identifiers = ["ec2-tasks.amazonaws.com"]
+      identifiers = ["s3-tasks.amazonaws.com"]
+      identifiers = ["lambda-tasks.amazonaws.com"]
+
     }
-  ]
+  }
 }
 
 # ECS task execution role
