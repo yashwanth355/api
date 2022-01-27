@@ -1,5 +1,4 @@
 data "aws_iam_policy_document" "ecs_task_execution_role" {
-{
   "Version": "2012-10-17",
   "Statement": [
     {
@@ -13,7 +12,6 @@ data "aws_iam_policy_document" "ecs_task_execution_role" {
       "Action": "sts:AssumeRole"
     }
   ]
-}
 }
 
 # ECS task execution role
