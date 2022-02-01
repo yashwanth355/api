@@ -1,5 +1,5 @@
 # security group creation and attcahing in ecs, alb etc
-
+#
 # ALB Security Group: Edit to restrict access to the application
 resource "aws_security_group" "alb-sg" {
   name        = "dev-load-balancer-security-group"
