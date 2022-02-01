@@ -33,6 +33,7 @@ resource "aws_security_group" "ecs_sg" {
     to_port         = 0
     security_groups = [aws_security_group.alb-sg.id]
   }
+  
 
   egress {
     protocol    = "-1"
