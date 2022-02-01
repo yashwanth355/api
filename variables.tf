@@ -4,6 +4,7 @@ variable "aws_region" {
   #replace the region as suits for your requirement
 }
 
+
 variable "az_count" {
   default     = "2"
   #description = "number of availability zones in above region"
